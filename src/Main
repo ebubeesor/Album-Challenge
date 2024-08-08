@@ -1,0 +1,62 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
+// then press Enter. You can now see whitespace characters in your code.
+public class Main {
+    public static void main(String[] args) {
+
+        // Create albums
+        Album album1 = new Album("Channel Orange", "Frank Ocean");
+        album1.addSong("Thinkin Bout You", 260);
+        album1.addSong("Sierra Leone", 148);
+        album1.addSong("Sweet Life", 262);
+        album1.addSong("Super Rich Kids", 334);
+        album1.addSong("Pilot Jones", 185);
+        album1.addSong("Crack Rock", 224);
+        album1.addSong("Pyramids", 593);
+        album1.addSong("Lost", 234);
+        album1.addSong("White", 76);
+        album1.addSong("Monks", 200);
+        album1.addSong("Bad Religion", 175);
+        album1.addSong("Pink Matter", 268);
+        album1.addSong("Forrest Gump", 195);
+        album1.addSong("End", 120);
+
+        Album album2 = new Album("Mama's Gun", "Erykah Badu");
+        album2.addSong("Penitentiary Philosophy", 370);
+        album2.addSong("Didn't Cha Know", 239);
+        album2.addSong("My Life", 238);
+        album2.addSong("... & On", 204);
+        album2.addSong("Cleva", 226);
+        album2.addSong("Hey Sugah", 62);
+        album2.addSong("Booty", 245);
+        album2.addSong("Kiss Me on My Neck (Hesi)", 335);
+        album2.addSong("A.D. 2000", 291);
+        album2.addSong("Orange Moon", 432);
+        album2.addSong("In Love with You", 321);
+        album2.addSong("Bag Lady", 348);
+        album2.addSong("Time's a Wastin", 400);
+        album2.addSong("Green Eyes", 603);
+
+        // Add albums to a list
+        List<Album> albums = new ArrayList<>();
+        albums.add(album1);
+        albums.add(album2);
+
+        // Create a playlist
+        LinkedList<Song> playList = new LinkedList<>();
+        albums.get(0).addToPlayList("Lost", playList);
+        albums.get(0).addToPlayList("Super Rich Kids", playList);
+        albums.get(0).addToPlayList("Pyramids", playList);
+        albums.get(0).addToPlayList(7, playList); // "Pyramids" by track number
+        albums.get(1).addToPlayList(2, playList); // "Didn't Cha Know" by track number
+        albums.get(1).addToPlayList(13, playList); // "Time's a Wastin" by track number
+        albums.get(1).addToPlayList(14, playList); // "Green Eyes" by track number
+        // Print the playlist
+        for (Song song : playList) {
+            System.out.println(song);
+        }
+    }
+}
